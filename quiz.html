@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Categories</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <section class="flex">
+
+            <a href="home.html" class="logo">We Discuss Here</a>
+
+            <form action="search.html" method="post" class="search-form">
+                <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+                <button type="submit" class="fas fa-search"></button>
+            </form>
+
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="toggle-btn" class="fas fa-sun"></div>
+            </div>
+
+            <div class="profile">
+                <img src="images/logo.png" class="image" alt="">
+                <h3 class="name">We Discuss Here</h3>
+                <p class="role">student</p>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="flex-btn">
+                    <a href="login.html" class="option-btn">login</a>
+                    <a href="register.html" class="option-btn">register</a>
+                </div>
+            </div>
+
+        </section>
+
+    </header>
+
+    <div class="side-bar">
+
+        <div id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="profile">
+            <img src="images/logo.png" class="image" alt="">
+            <h3 class="name">We Discuss Here</h3>
+            <p class="role">student</p>
+            <a href="profile.html" class="btn">view profile</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="blog.html"><i class="fas fa-graduation-cap"></i><span>Blogs</span></a>
+            <a href="quiz.html"><i class="fas fa-chalkboard-user"></i><span>Quiz</span></a>
+            <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+            <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+
+        </nav>
+
+    </div>
+
+    <section class="quiz-categories">
+
+        <h1 class="heading">Quiz Categories</h1>
+
+        <!-- SSC Section -->
+        <div class="category-section">
+            <h2>SSC</h2>
+            <div class="box-container">
+                <!-- <div class="box">
+                    <h3>General Knowledge Quiz</h3>
+                    <p>Test your general knowledge for the SSC exam with a variety of questions.</p>
+                    <button class="inline-btn" id="startQuizBtn">Start Quiz</button>
+                </div> -->
+                <div class="box">
+                    <h3>General Knowledge Quiz</h3>
+                    <p>Test your general knowledge for the SSC exam with a variety of questions.</p>
+                    <a href="set/ssc.html" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Mathematics Quiz</h3>
+                    <p>Test your mathematical skills with questions on topics like Algebra, Geometry, and more.</p>
+                    <a href="quiz_detail.html?quiz=ssc_math" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Reasoning Quiz</h3>
+                    <p>Challenge your reasoning abilities with puzzles and logic questions.</p>
+                    <a href="quiz_detail.html?quiz=ssc_reasoning" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banking Section -->
+        <div class="category-section">
+            <h2>Banking</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Quantitative Aptitude Quiz</h3>
+                    <p>Test your aptitude with questions on Number Series, Simplification, and more.</p>
+                    <a href="quiz_detail.html?quiz=banking_aptitude" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>English Language Quiz</h3>
+                    <p>Improve your English with questions covering Grammar, Vocabulary, and more.</p>
+                    <a href="quiz_detail.html?quiz=banking_english" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Financial Awareness Quiz</h3>
+                    <p>Prepare for the Banking exams by testing your knowledge of banking and financial terms.</p>
+                    <a href="quiz_detail.html?quiz=banking_financial" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Railway Section -->
+        <div class="category-section">
+            <h2>Railway</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>General Knowledge Quiz</h3>
+                    <p>Brush up on your general knowledge for Railway exams with a wide range of questions.</p>
+                    <a href="quiz_detail.html?quiz=railway_gk" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Current Affairs Quiz</h3>
+                    <p>Test your knowledge of the latest current affairs with this quiz.</p>
+                    <a href="quiz_detail.html?quiz=railway_currentaffairs" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Technical Subjects Quiz</h3>
+                    <p>Prepare for Railway technical exams with this quiz on engineering and related subjects.</p>
+                    <a href="quiz_detail.html?quiz=railway_technical" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPSC Section -->
+        <div class="category-section">
+            <h2>UPSC</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>General Studies Quiz</h3>
+                    <p>Prepare for UPSC with questions on Geography, Polity, History, and more.</p>
+                    <a href="quiz_detail.html?quiz=upsc_studies" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Current Affairs Quiz</h3>
+                    <p>Stay updated with the latest current affairs for UPSC exams.</p>
+                    <a href="quiz_detail.html?quiz=upsc_currentaffairs" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>CSAT (Civil Services Aptitude Test) Quiz</h3>
+                    <p>Prepare for the CSAT exam with questions on Aptitude, Logical Reasoning, and more.</p>
+                    <a href="quiz_detail.html?quiz=upsc_csat" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12th Standard Section -->
+        <div class="category-section">
+            <h2>12th Standard</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Physics Quiz</h3>
+                    <p>Prepare for your 12th Physics exam with questions on Mechanics, Optics, and more.</p>
+                    <a href="quiz_detail.html?quiz=12th_physics" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Chemistry Quiz</h3>
+                    <p>Test your knowledge in Chemistry with questions on Organic Chemistry, Physical Chemistry, etc.
+                    </p>
+                    <a href="quiz_detail.html?quiz=12th_chemistry" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Mathematics Quiz</h3>
+                    <p>Prepare for your 12th Maths exam with questions covering Calculus, Algebra, and more.</p>
+                    <a href="quiz_detail.html?quiz=12th_maths" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NDA Section -->
+        <div class="category-section">
+            <h2>NDA</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Mathematics Quiz</h3>
+                    <p>Prepare for NDA exams with questions on topics like Algebra, Geometry, and more.</p>
+                    <a href="quiz_detail.html?quiz=nda_maths" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>General Knowledge Quiz</h3>
+                    <p>Test your knowledge of General Knowledge and Current Affairs for NDA exams.</p>
+                    <a href="quiz_detail.html?quiz=nda_gk" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSSC Section -->
+        <div class="category-section">
+            <h2>JSSC</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>General Knowledge Quiz</h3>
+                    <p>Prepare for JSSC exams with questions on various general knowledge topics.</p>
+                    <a href="quiz_detail.html?quiz=jssc_gk" class="inline-btn">Start Quiz</a>
+                </div>
+                <div class="box">
+                    <h3>Mathematics Quiz</h3>
+                    <p>Test your skills in Mathematics with this quiz designed for JSSC exam preparation.</p>
+                    <a href="quiz_detail.html?quiz=jssc_math" class="inline-btn">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        &copy; copyright @ 2022 by <span>Mr. Web Designer</span> | All rights reserved!
+    </footer>
+
+    <!-- Custom JS file link -->
+    <script src="js/script.js">
+        async function loadQuiz(quizId) {
+            try {
+                const response = await fetch(`http://localhost:5000/api/questions/${quizId}`);
+                const questions = await response.json();
+                displayQuestions(questions);
+            } catch (error) {
+                console.error("Error fetching questions:", error);
+            }
+        }
+
+        function displayQuestions(questions) {
+            const container = document.querySelector(".quiz-container");
+            container.innerHTML = ""; // Clear previous content
+            questions.forEach((q, index) => {
+                const questionElement = `
+                <div class="question">
+                    <h3>Q${index + 1}. ${q.question}</h3>
+                    <ul>
+                        ${q.options
+                        .map((option, i) => `<li>${String.fromCharCode(65 + i)}. ${option}</li>`)
+                        .join("")}
+                    </ul>
+                </div>
+            `;
+                container.innerHTML += questionElement;
+            });
+        }
+
+        // Load quiz based on query parameter
+        const params = new URLSearchParams(window.location.search);
+        const quizId = params.get("quiz");
+        if (quizId) {
+            loadQuiz(quizId);
+        }
+
+
+
+
+         // Function to trigger payment process
+    document.getElementById("startQuizBtn").addEventListener("click", function() {
+        // Request backend to create an order
+        fetch("/create-order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                amount: 500 // Amount in paise (5 INR = 500 paise)
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            var options = {
+                key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay key ID
+                amount: data.amount, // Total amount (in paise)
+                currency: "INR",
+                order_id: data.order_id, // Order ID generated by the backend
+                handler: function(response) {
+                    // This is the payment success handler
+                    alert("Payment successful!");
+                    // Redirect to the quiz page after successful payment
+                    window.location.href = "set/ssc.html";
+                },
+                prefill: {
+                    name: "Test User",
+                    email: "test@example.com",
+                    contact: "9999999999"
+                },
+                notes: {
+                    address: "Test address"
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open(); // Open Razorpay payment window
+        })
+        .catch(error => {
+            console.error("Error creating order:", error);
+            alert("Payment request failed!");
+        });
+    });
+    </script>
+
+</body>
+
+</html>

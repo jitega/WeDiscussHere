@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #a2b34c, #8d4141);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid #1c0e0e;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box; /* Include padding in input width calculation */
+        }
+
+        .register-btn {
+            border: none;
+            background-color: green;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registerForm">
+        <h2>Register</h2>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required />
+
+        <button type="submit" class="register-btn">Register</button>
+    </form>
+
+    <script>
+        const form = document.querySelector("#registerForm");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const email = form.email.value;
+            const password = form.password.value;
+            const confirmPassword = form.confirmPassword.value;
+
+            // Validate password confirmation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Basic email validation
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Store registration details (localStorage example)
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("Registration successful! You can now login.");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+
+        // Simple email validation function
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+</html>

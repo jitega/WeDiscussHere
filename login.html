@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #a2b34c, #8d4141);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        input {
+            width: 300px;
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid #1c0e0e;
+            font-size: 20px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box; /* Include padding in input width calculation */
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: aqua;
+        }
+        #calendar {
+            flex: 1;
+        }
+        #currentDateTime {
+            background-color: rgb(244, 140, 5);
+            border: 1px solid #eb0d0d;
+            padding: 10px;
+            font-size: 16px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        #timer {
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #170c0c;
+            border-radius: 50%;
+        }
+        .login-btn{
+        border: none;
+        background-color: green;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="calendar"></div>
+        <div id="currentDateTime"></div>
+    </div>
+    
+    <form>
+        <div id="timer">30</div>
+        <h2>Login to Your Account</h2>
+        <label for="username">Username</label>
+        <input type="text" name="username" />
+       
+        <div style="position: relative;"> <!-- Adding a relative position wrapper -->
+            <input type="password" name="Password" id="Password">
+            <button type="button" class="password-toggle" onclick="togglePassword()">Show</button>
+        </div>
+        <input type="submit" class="login-btn" value="Log In">
+    </form>
+
+    <script>
+        const form = document.querySelector("form")
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+
+            const username = form.username.value
+            const password = form.password.value
+
+            const authenticated = authentication(username,password)
+
+            if(authenticated){
+                window.location.href = "logout.html"
+            }else{
+                alert("wrong")
+            }
+        })
+
+        // function for checking username and password
+
+        function authentication(username,password){
+            if(username === "admin" && password === "password"){
+                return true
+            }else{
+                return false
+            }
+        }
+
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('Password');
+            const passwordToggle = document.querySelector('.password-toggle');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggle.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                passwordToggle.textContent = 'Show';
+            }
+        }
+
+        function createCalendar(year, month) {
+            // Your calendar creation logic here (same as previous code)
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeDiv = document.getElementById('currentDateTime');
+            dateTimeDiv.textContent = now.toLocaleString();
+        }
+
+        createCalendar(2024, 1); // Display calendar for January 2024
+
+        setInterval(updateDateTime, 1000); // Update current date and time every second
+        updateDateTime();
+
+        let seconds = 30;
+
+        function updateTimer(){
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = seconds;
+
+            if(seconds === 0){
+                clearInterval(timeInterval);
+                alert('Time expired!');
+            }else{
+                seconds--;
+            }
+        }
+
+        const timeInterval = setInterval(updateTimer,1000);
+        updateTimer();
+    </script>
+</body>
+</html>

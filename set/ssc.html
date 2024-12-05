@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. What is the capital of France?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> A) Paris</label><br>
+                <label><input type="radio" name="q1" value="b"> B) London</label><br>
+                <label><input type="radio" name="q1" value="c"> C) Berlin</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Who is the CEO of Tesla?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> A) Elon Musk</label><br>
+                <label><input type="radio" name="q2" value="b"> B) Jeff Bezos</label><br>
+                <label><input type="radio" name="q2" value="c"> C) Bill Gates</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. What is 2 + 2?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> A) 3</label><br>
+                <label><input type="radio" name="q3" value="b"> B) 4</label><br>
+                <label><input type="radio" name="q3" value="c"> C) 5</label><br>
+            </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        var totalQuestions = 3;
+        var correctAnswers = { q1: "a", q2: "a", q3: "b" };
+        var userAnswers = {};
+
+        var form = document.forms['quizForm'];
+        for (var i = 1; i <= totalQuestions; i++) {
+            var selectedAnswer = form['q' + i].value;
+            userAnswers['q' + i] = selectedAnswer;
+            if (selectedAnswer === correctAnswers['q' + i]) {
+                score++;
+            }
+        }
+
+        // Save the score and answers to localStorage
+        localStorage.setItem("score", score);
+        localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+        
+        // Redirect to the submit page
+        window.location.href = "submit.html";
+    }
+</script>
+
+</body>
+</html>

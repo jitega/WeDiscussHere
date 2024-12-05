@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .view-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .view-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your Score</h1>
+    <div class="result" id="result"></div>
+    <button class="view-btn" onclick="viewResults()">View Results</button>
+</div>
+
+<script>
+    window.onload = function() {
+        var score = localStorage.getItem("score");
+        document.getElementById("result").innerText = "You scored " + score + " out of 3.";
+    };
+
+    function viewResults() {
+        window.location.href = "view.html";
+    }
+</script>
+
+</body>
+</html>
